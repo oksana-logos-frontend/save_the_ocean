@@ -1,0 +1,17 @@
+{
+  "name": "save_the_ocean",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "lint": "eslint ./src --fix --color",
+    "start": "parcel --open",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "@parcel/transformer-sass": "^2.8.0"
+  }
+}
