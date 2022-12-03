@@ -1,0 +1,12 @@
+.toggle {
+  width: 48px;
+  height: 32px;
+  background-image: url(../images/icons/Rectangle-362.png);
+  position: relative;
+
+  &__btn {
+    position: absolute;
+    left: -4px;
+    cursor: pointer;
+  }
+}

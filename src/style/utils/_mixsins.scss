@@ -1,0 +1,23 @@
+@mixin onBigDesktopScreen {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin onMiddleDesktopScreen {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin onLittleDesktopScreen {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

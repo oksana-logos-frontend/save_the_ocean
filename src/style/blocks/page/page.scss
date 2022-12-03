@@ -1,0 +1,51 @@
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 72px;
+    right: 0;
+    transform: translateX(+100%);
+    transition: transform 0.5s;
+  
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onTablet {
+      left: 50%;
+    }
+
+    @include onLittleDesktopScreen {
+      left: 59%;
+    }
+
+    @include onMiddleDesktopScreen {
+      left: 66%;
+    }
+
+    @include onBigDesktopScreen {
+      left: 74%;
+    }
+  }
+
+  &__body {
+    margin: 0;
+    padding: 0 23px;
+
+    @include onTablet {
+      padding: 0 33px;
+    }
+
+    @include onLittleDesktopScreen {
+      padding: 0 40px;
+    }
+
+    @include onMiddleDesktopScreen {
+      padding: 0 71px;
+    }
+
+    @include onBigDesktopScreen {
+      padding: 0 112px;
+    }
+  }
+}
