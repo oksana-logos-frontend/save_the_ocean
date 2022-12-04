@@ -1,0 +1,132 @@
+.slider-container {
+  height: fit-content;
+  padding-top: 16px;
+  position: relative;
+
+  @include onTablet {
+    padding-top: 0;
+  }
+}
+
+.slider {
+  &__item {
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 20%;
+    background-size: cover !important;
+
+    @include onLittleDesktopScreen {
+      padding-bottom: 23%;
+    }
+
+    @include onMiddleDesktopScreen {
+      padding-bottom: 18%;
+    }
+  }
+
+  &__slide1 {
+    background:url(../images/pictures/unsplash_4CaVbHUXf5o.png) no-repeat center;
+  }
+
+  &__slide2 {
+    background:url(../images/pictures/unsplash_i5FsBOLsB50.png) no-repeat center;
+  }
+
+  &__slide3 {
+    background:url(../images/pictures/unsplash_Ubwb-m2eKAo.png) no-repeat center;
+  }
+
+  &__btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 2px;
+    width: 120px;
+    height: 40px;
+    left: 17px;
+
+    @include onTablet {
+      bottom: 12px;
+      width: 160px;
+      left: 40px;
+    }
+
+    @include onMiddleDesktopScreen {
+      width: 204px;
+      bottom: 26px;
+    }
+  }
+
+  &__btn {
+    width: 31px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    @include onTablet {
+      width: 32px;
+      height: 27px;
+    }
+
+    @include onMiddleDesktopScreen {
+      width: 47px;
+      height: 41px;
+    }
+  }
+
+  &__prev-btn {
+    background-image: url(../images/icons/arrow.white-empty.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s;
+
+    &:hover {
+      background-image: url(../images/icons/arrow-prew-full.png);
+    }
+  }
+
+  &__next-btn {
+    background-image: url(../images/icons/arrow-white-next.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s;
+
+    &:hover {
+      background-image: url(../images/icons/arrow-white-full.svg);
+    }
+  }
+
+  &__pagingInfo {
+    color: white;
+    @extend %SyncopateThin;
+    font-size: 18px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onMiddleDesktopScreen {
+      font-size: 36px;
+    } 
+  }
+
+  &__pagingInfo-num {
+    font-weight: bold;
+    color: white;
+    @extend %SyncopateThin;
+    font-size: 18px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onMiddleDesktopScreen {
+      font-size: 36px;
+    }
+  }
+}

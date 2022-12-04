@@ -1,0 +1,13 @@
+.toggle {
+  width: 48px;
+  height: 32px;
+  background-image: url(../images/icons/Rectangle-362.png);
+  position: relative;
+}
+
+.toggle__btn {
+  position: absolute;
+  left: -4px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=toggle.css.map */

@@ -1,0 +1,120 @@
+.menu {
+  background-color: white;
+  z-index: 2;
+
+  &__content {
+    height: 100vh;
+    padding:16px 23px;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__close-link {
+    list-style: none;
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__cross-icon {
+    margin: auto;
+    width: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__list {
+    @extend %SyncopateBold;
+    list-style: none; 
+    font-size: 20px;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 33px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $mainBlack;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+
+    &:hover {
+      text-shadow: -2px 1px 0px $mainBlue;
+    }
+
+    &--contact {
+      font-size: 20px;
+      line-height: 21px;
+
+      @include onTablet {
+        font-size: 32px;
+        line-height: 33px;
+      }
+    }
+
+    &--contacts {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__contacts {
+    @extend %SyncopateBold;
+    list-style: none;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 19px;
+    }
+  }
+
+  &__contacts-block {
+    position: fixed;
+    bottom: 24px;
+  }
+
+  &__contacts-content {
+    @extend %SyncopateThin;
+    color: $colorGray;
+    font-size: 13px;
+    line-height: 14px;
+    cursor: pointer;
+  }
+
+  &__sotials {
+    margin-top: 30px;
+  }
+
+  &__sotials-icon {
+    display: inline-block;
+    margin-right: 32px;
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
+    }
+  }
+}

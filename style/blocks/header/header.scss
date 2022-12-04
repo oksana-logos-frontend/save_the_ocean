@@ -1,0 +1,113 @@
+.header {
+  &__content-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 99px;
+    position: relative;
+
+    @include onTablet {
+      display: grid;
+      height: 127px;
+    }
+  }
+
+  &__logo-content {
+    text-decoration: none;
+    text-transform: uppercase;
+    @extend %SyncopateThin;
+    color: $mainBlack;
+    font-size: 20px;
+    line-height: 20px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 37px;
+    }
+
+    &--blue {
+      color: $mainBlue;
+      @extend %SyncopateBold;
+    }
+  }
+
+  &__contacts {
+    display: none;
+
+    @include onLittleDesktopScreen {
+      display: block;
+      justify-self: center;
+    }
+
+    @include onBigDesktopScreen {
+      justify-self: end;
+    }
+  }
+
+  &__phone {
+    display: block;
+    color: $mainBlack;
+    @extend %SyncopateThin;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+
+  &__contacts-scedule {
+    color: $colorGray;
+    @extend %SyncopateThin;
+    font-size: 13px;
+    line-height: 14px;
+  }
+
+  &__theme-toggle {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      justify-self: end;
+    }
+
+    @include onLittleDesktopScreen {
+      justify-self: center;
+    }
+
+    @include onMiddleDesktopScreen {
+      justify-self: end;
+    }
+  } 
+
+  &__menu-opener {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $mainBlack;
+    background-color: $mainBlack;
+
+    @include onTablet {
+      justify-self: end;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__menu-open-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__burger-img {
+    width: 20px;
+    margin: auto;
+  }
+
+  &__decorate-line {
+    @extend %hrStyle;
+   position: absolute;
+   bottom: 10px;
+  }
+}
+
+.filter {
+  filter:blur(5px);
+}
