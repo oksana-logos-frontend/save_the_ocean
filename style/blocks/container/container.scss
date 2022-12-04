@@ -1,4 +1,21 @@
 .container {
   max-width: 1700px;
   margin: 0 auto;
+  padding: 0 23px;
+
+  @include onTablet {
+    padding: 0 33px;
+  }
+
+  @include onLittleDesktopScreen {
+    padding: 0 40px;
+  }
+
+  @include onMiddleDesktopScreen {
+    padding: 0 71px;
+  }
+
+  @include onBigDesktopScreen {
+    padding: 0;
+  }
 }
