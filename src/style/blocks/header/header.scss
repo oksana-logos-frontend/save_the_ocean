@@ -102,11 +102,12 @@
   }
 
   &__decorate-line {
+    @extend %hrStyle;
    position: absolute;
-   background-color: $mainBlack;
-   border: none;
-   height: 1px;
    bottom: 10px;
-   width: 100%;
   }
+}
+
+.filter {
+  filter:blur(5px);
 }

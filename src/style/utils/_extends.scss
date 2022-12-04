@@ -7,3 +7,10 @@
   font-weight: 400;
   font-family: $Syncopate;
 }
+
+%hrStyle {
+  background-color: $mainBlack;
+  border: none;
+  height: 1px;
+  width: 100%;
+}
