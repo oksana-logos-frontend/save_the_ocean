@@ -80,7 +80,7 @@ ul {
 
 @media (min-width: 1920px) {
   .container {
-    padding: 0 112px;
+    padding: 0;
   }
 }
 
@@ -2166,7 +2166,6 @@ ul {
 }
 
 .latest-news__card-text {
-  width: 240px;
   font-family: "KyivType Sans";
   font-size: 16px;
   line-height: 24px;
@@ -2460,6 +2459,22 @@ ul {
   padding-left: 10px;
   -webkit-transform: rotate(-0.49deg);
           transform: rotate(-0.49deg);
+}
+
+.footer__contact-block {
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .footer__contact-block {
+    margin-bottom: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__contact-block {
+    margin-bottom: 80px;
+  }
 }
 
 .footer__contacts {

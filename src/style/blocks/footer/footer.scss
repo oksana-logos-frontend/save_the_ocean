@@ -87,6 +87,18 @@
     transform: rotate(-0.49deg);
   }
 
+  &__contact-block {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onLittleDesktopScreen {
+      margin-bottom: 80px;
+    }
+  }
+
   &__contacts {
     @extend %SyncopateBold;
     list-style: none;
