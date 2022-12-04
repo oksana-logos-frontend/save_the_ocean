@@ -1,0 +1,167 @@
+.footer {
+  background-color: $mainBlack;
+  padding-top: 40px;
+  border-bottom: 57px solid #1A1A1A;
+
+  &__logo {
+    margin-bottom: 30px;
+  } 
+
+  &__logo-content {
+    @extend %SyncopateThin;
+    font-size: 24px;
+    line-height: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 37px;
+    }
+
+    &--blue {
+      color: $mainBlue;
+      @extend %SyncopateBold;
+    }
+  }
+
+  &__title {
+    @extend %SyncopateBold;
+    font-size: 32px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 19px;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 25px;
+    }
+
+    @include onLittleDesktopScreen {
+      font-size: 35px;
+      line-height: 37px;
+    }
+  }
+
+  &__socials {
+    margin-bottom: 47px;
+  }
+
+  &__socials-block {
+    height: 48px;
+    margin-bottom: 16px;
+    background-color: white;
+    transition: background-color 0.3s;
+
+    @include onTablet {
+      display: inline-block;
+      width: 196px;
+      margin-right: 24px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:hover {
+      background-color: $mainBlue;
+    }
+  }
+
+  &__sotials-link {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $mainBlack;
+  }
+
+  &__sotials-text {
+    @extend %SyncopateBold;
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: 10px;
+    transform: rotate(-0.49deg);
+  }
+
+  &__contact-block {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 72px;
+    }
+
+    @include onLittleDesktopScreen {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__contacts {
+    @extend %SyncopateBold;
+    list-style: none;
+    font-size: 18px;
+    line-height: 19px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 17px;
+    }
+
+    @include onLittleDesktopScreen {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    margin-bottom: 32px;
+    width: fit-content;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include onLittleDesktopScreen {
+      margin-right: 42px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onBigDesktopScreen {
+      margin-right: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+
+    &--contacts {
+      margin-bottom: 11px;
+    }
+
+    &:hover {
+      text-shadow: -2px 1px 0px $mainBlue;
+    }
+  }
+
+  &__contacts-content {
+    @extend %SyncopateThin;
+    color: $colorGray;
+    font-size: 13px;
+    line-height: 14px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,174 @@
+.latest-news {
+  height: fit-content;
+  margin-bottom: 59px;
+
+  &__slider {
+    display: block;
+
+    @include onLittleDesktopScreen {
+      display: none;
+    }
+  }
+
+  &__slider-card {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__card-wrap {
+    border: 1px solid $mainBlack;
+    transition: box-shadow 0.3s;
+
+    @include onLittleDesktopScreen {
+      &:hover {
+        box-shadow: -5px 5px $mainBlue, 
+        -5px 5px 0px 1px $mainBlack;
+      }
+    }
+  }
+
+  &__card-desktop {
+    display: none !important;
+
+    @include onLittleDesktopScreen {
+      display: block !important;
+    }
+  }
+
+  &__title {
+    @extend %titleStyle;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 33px;
+    }
+
+    @include onMiddleDesktopScreen {
+      font-size: 36px;
+      line-height: 37px;
+    }
+  }
+
+  &__card-img-wrap {
+    height: 167px;
+    overflow: hidden;
+
+    @include onTablet {
+      height: 136px;
+    }
+
+    @include onMiddleDesktopScreen {
+      height: 167px;
+    }
+
+    @include onBigDesktopScreen {
+      height: 232px;
+    }
+  }
+
+  &__card-img-wrap &__card-img {
+    width: 100%;
+  }
+
+  &__card-content {
+    padding: 11px 25px;
+    height: 203px;
+
+    @include onTablet {
+      height: 205px;
+    }
+
+    @include onBigDesktopScreen {
+      height: 170px;
+    }
+  }
+
+  &__card-title {
+    @extend %SyncopateBold;
+    font-size: 16px;
+    line-height: 20px;
+    color: $mainBlack;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @include onMiddleDesktopScreen {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__card-text {
+    font-family: $KyivType;
+    font-size: 16px;
+    line-height: 24px;
+    color: $mainBlack;
+
+    @include onTablet {
+      width: 192px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include onMiddleDesktopScreen {
+      width: 100%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--1 {
+      @extend %showCardContent;
+      @include numberOfLines(5);
+
+      @include onLittleDesktopScreen {
+        @include numberOfLines(6);
+      }
+
+      @include onBigDesktopScreen {
+        @include numberOfLines(4);
+      }
+    }
+
+    &--2 {
+      @extend %showCardContent;
+      @include numberOfLines(4);
+
+      @include onBigDesktopScreen {
+        @include numberOfLines(3);
+      }
+    }
+
+    &--3 {
+      @extend %showCardContent;
+      @include numberOfLines(3);
+
+      @include onTablet {
+        @include numberOfLines(4);
+      }
+
+      @include onBigDesktopScreen {
+        @include numberOfLines(3);
+      }
+    }
+
+    &--4 {
+      @extend %showCardContent;
+      @include numberOfLines(2);
+
+      @include onMiddleDesktopScreen {
+        @include numberOfLines(1);
+      }
+
+      @include onBigDesktopScreen {
+        @include numberOfLines(2);
+      }
+    }
+  }
+}
