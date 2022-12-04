@@ -14,3 +14,10 @@
   height: 1px;
   width: 100%;
 }
+
+%showCardContent {
+  text-overflow: ellipsis;
+  overflow:hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

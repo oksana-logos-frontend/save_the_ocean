@@ -20,6 +20,8 @@ $('.slider').slick({
   nextArrow: $('.slider__next-btn'),
   prevArrow: $('.slider__prev-btn'),
   speed: 500,
+  draggable: false,
+  swipe: false,
   fade: true,
   cssEase: 'linear'
 });
@@ -39,3 +41,38 @@ prevBtn.addEventListener('click', function() {
     +currentSlideNum.innerText --;
   }
 });
+
+
+$('.latest-news__slider').slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  nextArrow: false,
+  prevArrow: false,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
