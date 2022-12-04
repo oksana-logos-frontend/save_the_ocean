@@ -1,0 +1,104 @@
+.about {
+  height: fit-content;
+  
+  &__title {
+    border-bottom: 1px solid $mainBlack;
+    padding: 16px 0;
+
+    @include onLittleDesktopScreen {
+      height: 20%;
+      padding: 0 0 16px;
+    }
+  }
+
+  &__title-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onLittleDesktopScreen {
+      height: 80%;
+    }
+  }
+
+  &__hr {
+    @extend %hrStyle;
+    margin-top: 16px;
+
+    @include onMiddleDesktopScreen {
+      margin-top: 20px;
+    }
+  }
+
+  &__content-block {
+    border-bottom: 1px solid $mainBlack;
+    padding: 16px 0;
+    position: relative;
+
+    @include onMiddleDesktopScreen {
+      padding: 20px 0;
+    }
+
+    &--first {
+      height: 20%;
+      padding: 16px 0;
+      border-bottom: none;
+
+      @include onLittleDesktopScreen {
+        padding: 16px 0 6px;
+      }
+
+      @include onMiddleDesktopScreen {
+        padding: 15px 0 20px;
+      }
+    }
+
+    &--second {
+      border-top: 1px solid $mainBlack;
+    }
+  }
+
+  &__content-title {
+    @extend %SyncopateBold; 
+    font-size: 14px;
+    line-height: 15px;
+    color: $mainBlack;
+    text-transform: uppercase;
+
+    &--closet::after {
+      content: url('../images/icons/Vector-arrov.svg');
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      cursor: pointer;
+    }
+
+    @include onMiddleDesktopScreen {
+      font-size: 16px;
+    }
+  }
+
+  &__content-text {
+    font-family: $KyivType;
+    font-size: 14px;
+    color: $mainBlack;
+    line-height: 22px;
+
+    @include onMiddleDesktopScreen {
+      font-size: 16px;
+    }
+  }
+}
