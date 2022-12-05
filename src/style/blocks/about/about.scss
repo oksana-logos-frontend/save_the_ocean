@@ -88,6 +88,15 @@
     &--second.active {
       border-top: 1px solid white;
     }
+
+    &:hover {
+      h3 {
+        color: $mainBlue;
+      }
+      img {
+        filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
+      }
+    }
   }
 
   &__content-block.active {

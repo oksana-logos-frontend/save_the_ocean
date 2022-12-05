@@ -1948,6 +1948,15 @@ ul {
   border-top: 1px solid white;
 }
 
+.about__content-block:hover h3 {
+  color: #24A9F4;
+}
+
+.about__content-block:hover img {
+  -webkit-filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
+          filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
+}
+
 .about__content-block.active {
   border-bottom: 1px solid white;
 }
