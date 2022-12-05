@@ -155,6 +155,7 @@ const contentBlock1 = document.querySelector('.about__content-block--first');
 const aboutBottomContent = document.querySelector('.about__bottom-content');
 const aboutContentTitle = document.querySelectorAll('.about__content-title');
 const pseudoElement = document.querySelectorAll('.about__content-arrow');
+const newsTitle = document.querySelector('.latest-news__title');
 const sliderCard = document.querySelectorAll('.latest-news__card-wrap');
 const cardText = document.querySelectorAll('.latest-news__card-text');
 const cardTitle = document.querySelectorAll('.latest-news__card-title');
@@ -183,6 +184,7 @@ function handleToggle() {
   aboutContentText.classList.toggle('active'); 
   menuToggleItem.classList.toggle('active');
   aboutTopBorder.classList.toggle('active');
+  newsTitle.classList.toggle('active');
   contentBlock.classList.toggle('active');
   contentBlock1.classList.toggle('active');
   aboutBottomContent.classList.toggle('active');
