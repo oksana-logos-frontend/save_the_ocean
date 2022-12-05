@@ -20,7 +20,7 @@
 
   &__card-wrap {
     border: 1px solid $mainBlack;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, border 0.3s,  background-color 0.3s;
 
     @include onLittleDesktopScreen {
       &:hover {
@@ -29,6 +29,16 @@
       }
     }
   }
+
+  &__card-wrap.active {
+    background-color: #272727;
+    border: 1px solid white;
+
+    &:hover {
+      box-shadow: -5px 5px $mainBlue, 
+      -5px 5px 0px 1px white;
+    }
+  } 
 
   &__card-desktop {
     display: none !important;
@@ -93,6 +103,7 @@
     line-height: 20px;
     color: $mainBlack;
     text-transform: uppercase;
+    transition: color 0.3s;
 
     @include onTablet {
       font-size: 14px;
@@ -105,11 +116,16 @@
     }
   }
 
+  &__card-title.active {
+    color: white;
+  } 
+
   &__card-text {
     font-family: $KyivType;
     font-size: 16px;
     line-height: 24px;
     color: $mainBlack;
+    transition: color 0.3s;
 
     @include onTablet {
       width: 192px;
@@ -170,5 +186,9 @@
         @include numberOfLines(2);
       }
     }
+  }
+
+  &__card-text.active {
+    color: white;
   }
 }
