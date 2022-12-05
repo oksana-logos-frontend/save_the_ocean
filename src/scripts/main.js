@@ -142,6 +142,10 @@ const logo = document.querySelector('.header__logo-content');
 const headerPhone = document.querySelector('.header__phone');
 const burgerBtn = document.getElementById('burger-btn');
 const headerHr = document.querySelector('.header__decorate-line');
+const menu = document.querySelector('.menu');
+const menuLink = document.querySelectorAll('.menu__link ');
+const crossIcon = document.querySelector('.menu__cross-icon');
+const menuIconsSocial = document.querySelectorAll('.menu__sotials-icon');
 const aboutTitle = document.querySelector('.about__title-first');
 const aboutHr = document.querySelector('.about__hr');
 const aboutContentText = document.querySelector('.about__content-text');
@@ -172,6 +176,8 @@ function handleToggle() {
   burgerBtn.classList.toggle('active');
   toggleItem.classList.toggle('active');
   headerHr.classList.toggle('active');
+  menu.classList.toggle('active');
+  crossIcon.classList.toggle('active');
   aboutTitle.classList.toggle('active');
   aboutHr.classList.toggle('active'); 
   aboutContentText.classList.toggle('active'); 
@@ -186,6 +192,8 @@ function handleToggle() {
   footer.classList.toggle('active');
   progressBar.classList.toggle('active');
 
+  menuLink.forEach(item => item.classList.toggle('active'));
+  menuIconsSocial.forEach(item => item.classList.toggle('active'));
   aboutContentTitle.forEach(item => item.classList.toggle('active'));
   pseudoElement.forEach(item => item.classList.toggle('active'));
   sliderCard.forEach(item => item.classList.toggle('active'));
