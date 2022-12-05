@@ -2200,6 +2200,33 @@ ul {
           box-shadow: -5px 5px #24A9F4, -5px 5px 0px 1px white;
 }
 
+.latest-news__slider-progress {
+  display: block;
+  width: 100%;
+  height: 16px;
+  margin-top: 24px;
+  overflow: hidden;
+  background-color: #EFEFEF;
+  background-image: -webkit-gradient(linear, left top, right top, from(#101010), to(#101010));
+  background-image: linear-gradient(to right, #101010, #101010);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  -webkit-transition: background-size .4s ease-in-out, background-color 0.3s, background-image 0.3s;
+  transition: background-size .4s ease-in-out, background-color 0.3s, background-image 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .latest-news__slider-progress {
+    display: none;
+  }
+}
+
+.latest-news__slider-progress.active {
+  background-color: #413b3b;
+  background-image: -webkit-gradient(linear, left top, right top, from(white), to(white));
+  background-image: linear-gradient(to right, white, white);
+}
+
 .latest-news__card-desktop {
   display: none !important;
 }
