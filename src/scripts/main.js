@@ -42,8 +42,36 @@ prevBtn.addEventListener('click', function() {
   }
 });
 
+const $slider = $('.latest-news__slider');
+const $progressBar = $('.latest-news__slider-progress');
 
-$('.latest-news__slider').slick({
+function setProgress(index) {
+  const calc = ((index + 1) / ($slider.slick('getSlick').slideCount)) * 100;
+  const bigPhoneCalc = ((index + 2) / ($slider.slick('getSlick').slideCount)) * 100;
+  const tabCalc = ((index + 3) / ($slider.slick('getSlick').slideCount)) * 100;
+  
+
+  if (document.body.clientWidth > 700) {
+    $progressBar
+      .css('background-size', `${tabCalc}% 100%`)
+      .attr('aria-valuenow', tabCalc);
+  } else if (document.body.clientWidth > 535) {
+    $progressBar
+      .css('background-size', `${bigPhoneCalc}% 100%`)
+      .attr('aria-valuenow', bigPhoneCalc);
+  } else {
+    $progressBar
+      .css('background-size', `${calc}% 100%`)
+      .attr('aria-valuenow', calc);
+  }
+}
+
+$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+  setProgress(nextSlide);
+  
+});
+
+$slider.slick({
   dots: false,
   infinite: false,
   speed: 300,
@@ -74,7 +102,9 @@ $('.latest-news__slider').slick({
       }
     }
   ]
-});
+}); 
+
+setProgress(0);
 
 const form = document.getElementById('form');
 
@@ -112,6 +142,7 @@ const subscribeBtn = document.querySelector('.subscribe__btn');
 const footer = document.querySelector('.footer');
 const footerSocialsText = document.querySelectorAll('.footer__sotials-text');
 const footerIcon = document.querySelectorAll('.footer__icon');
+const progressBar = document.querySelector('.latest-news__slider-progress')
 
 toggle.addEventListener('click', handleToggle);
 menuToggle.addEventListener('click', handleToggle);
@@ -135,7 +166,8 @@ function handleToggle() {
   subscribeSection.classList.toggle('active');
   subscribeTitle.classList.toggle('active');
   subscribeBtn.classList.toggle('active'); 
-  footer.classList.toggle('active'); 
+  footer.classList.toggle('active');
+  progressBar.classList.toggle('active');
 
   aboutContentTitle.forEach(item => item.classList.toggle('active'));
   pseudoElement.forEach(item => item.classList.toggle('active'));
