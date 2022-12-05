@@ -26,10 +26,21 @@
 
   &__toggle {
     margin-bottom: 24px;
+    position: relative;
+    transition: 0.3s;
 
     @include onTablet {
       display: none;
     }
+  }
+
+  &__toggle-btn {
+    transition: background-image 0.3s;
+  }
+
+  .active &__toggle-btn {
+    left: 15px;
+    background-image: url(../images/icons/dark-theme.svg);
   }
 
   &__list {

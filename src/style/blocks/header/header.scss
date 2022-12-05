@@ -19,6 +19,7 @@
     color: $mainBlack;
     font-size: 20px;
     line-height: 20px;
+    transition: color 0.3s;
 
     @include onTablet {
       font-size: 36px;
@@ -29,6 +30,10 @@
       color: $mainBlue;
       @extend %SyncopateBold;
     }
+  }
+
+  &__logo-content.active {
+    color: white;
   }
 
   &__contacts {
@@ -51,7 +56,12 @@
     text-decoration: none;
     font-size: 16px;
     margin-bottom: 11px;
+    transition: color 0.3s;
   }
+
+  &__phone.active {
+    color: white;
+  } 
 
   &__contacts-scedule {
     color: $colorGray;
@@ -80,14 +90,19 @@
   &__menu-opener {
     width: 40px;
     height: 40px;
-    border: 1px solid $mainBlack;
-    background-color: $mainBlack;
+    background-image: url(../images/icons/burger-black.svg);
+    background-size: cover;
+    transition: background-image 0.3s;
 
     @include onTablet {
-      justify-self: end;
       width: 48px;
       height: 48px;
+      justify-self: end;
     }
+  }
+
+  &__menu-opener.active {
+    background-image: url(../images/icons/burger-white.svg);
   }
 
   &__menu-open-link {
@@ -96,15 +111,16 @@
     height: 100%;
   }
 
-  &__burger-img {
-    width: 20px;
-    margin: auto;
-  }
-
   &__decorate-line {
-    @extend %hrStyle;
+   @extend %hrStyle;
+   background-color: $mainBlack;
    position: absolute;
    bottom: 10px;
+   transition: background-color 0.3s;
+  }
+
+  &__decorate-line.active {
+    background-color: white;
   }
 }
 
