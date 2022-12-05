@@ -1,0 +1,27 @@
+.toggle {
+  width: 48px;
+  height: 32px;
+  background-image: url(../images/icons/Rectangle-362.svg);
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.toggle__btn {
+  position: absolute;
+  width: 35px;
+  height: 37px;
+  background-image: url(../images/icons/lite-theme.svg);
+  background-size: cover;
+  left: -5px;
+  top: 1px;
+  cursor: pointer;
+  -webkit-transition: background-image 0.3s, left 0.3s;
+  transition: background-image 0.3s, left 0.3s;
+}
+
+.active .toggle__btn {
+  left: 15px;
+  background-image: url(../images/icons/dark-theme.svg);
+}
+/*# sourceMappingURL=toggle.css.map */

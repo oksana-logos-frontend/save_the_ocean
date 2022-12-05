@@ -2,16 +2,34 @@ const burger = document.getElementById('burger-btn');
 const crossBtn = document.getElementById('close-btn');
 const header = document.getElementById('header');
 const main = document.querySelector('main');
+const footer = document.querySelector('.footer');
+const linkAbout = document.querySelector('.menu__link-about');
+const linkProject = document.querySelector('.menu__link-projects');
+const linkStories = document.querySelector('.menu__link-stories');
+const linkJoin = document.querySelector('.menu__link-join');
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', addBlur);
+crossBtn.addEventListener('click', removeBlur);
+linkAbout.addEventListener('click', removeBlur);
+linkProject.addEventListener('click', removeBlur); 
+linkStories.addEventListener('click', removeBlur);
+linkJoin.addEventListener('click', removeBlur);
+
+function addBlur() {
   header.classList.add('filter');
   main.classList.add('filter');
-});
+  footer.classList.add('filter');
 
-crossBtn.addEventListener('click', function() {
+  $('body').css('overflow', 'hidden');
+}
+
+function removeBlur() {
   header.classList.remove('filter');
   main.classList.remove('filter');
-});
+  footer.classList.remove('filter');
+
+  $('body').css('overflow', 'initial');
+}
 
 
 $('.slider').slick({
@@ -139,7 +157,6 @@ const cardTitle = document.querySelectorAll('.latest-news__card-title');
 const subscribeSection = document.querySelector('.subscribe');
 const subscribeTitle = document.querySelector('.subscribe__title');
 const subscribeBtn = document.querySelector('.subscribe__btn');
-const footer = document.querySelector('.footer');
 const footerSocialsText = document.querySelectorAll('.footer__sotials-text');
 const footerIcon = document.querySelectorAll('.footer__icon');
 const progressBar = document.querySelector('.latest-news__slider-progress')
