@@ -2,6 +2,12 @@
   background-color: $mainBlack;
   padding-top: 40px;
   border-bottom: 57px solid #1A1A1A;
+  transition: background-color 0.3s, border-bottom 0.3s;
+
+  &.active {
+    background-color: #272727;
+    border-bottom: 57px solid #2D2D2D;
+  }
 
   &__logo {
     margin-bottom: 30px;
@@ -79,12 +85,21 @@
     color: $mainBlack;
   }
 
+  &__icon.active {
+    filter: invert(7%) sepia(75%) saturate(24%) hue-rotate(352deg) brightness(94%) contrast(81%);
+  }
+
   &__sotials-text {
     @extend %SyncopateBold;
     font-size: 16px;
     line-height: 22px;
     padding-left: 10px;
+    transition: color 0.3s;
     transform: rotate(-0.49deg);
+  }
+
+  &__sotials-text.active {
+    color: #272727;
   }
 
   &__contact-block {

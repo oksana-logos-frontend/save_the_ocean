@@ -16,10 +16,15 @@
     display: block;
     width: 100%;
     margin-bottom: 15px;
+    transition: filter 0.3s;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__title-first.active {
+    filter: brightness(0) invert(1);
   }
 
   &__content {
@@ -34,17 +39,24 @@
 
   &__hr {
     @extend %hrStyle;
+    background-color: $mainBlack;
     margin-top: 16px;
+    transition: background-color 0.3s;
 
     @include onMiddleDesktopScreen {
       margin-top: 20px;
     }
   }
 
+  &__hr.active {
+    background-color: white;
+  }
+
   &__content-block {
     border-bottom: 1px solid $mainBlack;
     padding: 16px 0;
     position: relative;
+    transition: border-bottom 0.3s;
 
     @include onMiddleDesktopScreen {
       padding: 20px 0;
@@ -64,10 +76,23 @@
       }
     }
 
+    &--first.active {
+      border-bottom: none;
+    }
+
     &--second {
       border-top: 1px solid $mainBlack;
+      transition: border-top 0.3s;
+    }
+
+    &--second.active {
+      border-top: 1px solid white;
     }
   }
+
+  &__content-block.active {
+    border-bottom: 1px solid white;
+  } 
 
   &__content-title {
     @extend %SyncopateBold; 
@@ -75,31 +100,58 @@
     line-height: 15px;
     color: $mainBlack;
     text-transform: uppercase;
-
-    &--closet::after {
-      content: url('../images/icons/Vector-arrov.svg');
-      display: block;
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      top: 15px;
-      right: 0;
-      cursor: pointer;
-    }
+    cursor: pointer;
+    transition: color 0.3s;
 
     @include onMiddleDesktopScreen {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
+
+  &__content-title.active {
+    color: white;
+
+    &:hover {
+      color: $mainBlue;
+    }
+  }
+
+  &__content-arrow {
+    display: block;
+    width: 24px;
+    height: 17px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    cursor: pointer;
+    transition: filter 0.3s;
+  }
+
+  &__content-arrow.active {
+    filter: brightness(0) invert(1);
+  } 
 
   &__content-text {
     font-family: $KyivType;
     font-size: 14px;
     color: $mainBlack;
     line-height: 22px;
+    transition: color 0.3s;
 
     @include onMiddleDesktopScreen {
       font-size: 16px;
     }
+  }
+
+  &__content-text.active {
+    color: white;
+  }
+
+  &__bottom-content {
+    transition: border-bottom 0.3s;
+  }
+
+  &__bottom-content.active {
+    border-bottom: 1px solid white;
   }
 }

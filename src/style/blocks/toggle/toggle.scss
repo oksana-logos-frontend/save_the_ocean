@@ -1,12 +1,24 @@
 .toggle {
   width: 48px;
   height: 32px;
-  background-image: url(../images/icons/Rectangle-362.png);
+  background-image: url(../images/icons/Rectangle-362.svg);
   position: relative;
+  transition: 0.3s;
 
   &__btn {
     position: absolute;
-    left: -4px;
+    width: 35px;
+    height: 37px;
+    background-image: url(../images/icons/lite-theme.svg);
+    background-size: cover;
+    left: -5px;
+    top: 1px;
     cursor: pointer;
+    transition: background-image 0.3s, left 0.3s;
+  }
+
+  .active &__btn {
+    left: 15px;
+    background-image: url(../images/icons/dark-theme.svg);
   }
 }

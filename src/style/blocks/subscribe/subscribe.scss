@@ -3,11 +3,18 @@
   border-bottom: 1px solid $mainBlack;
   padding: 56px 0;
   margin-bottom: 120px;
+  transition: border-top 0.3s, border-bottom 0.3s;
+
+  &.active {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
 
   &__title {
     @extend %titleStyle;
     text-align: center;
     margin-bottom: 24px;
+    transition: color 0.3s;
 
     @include onTablet {
       padding: 0px 67px;
@@ -26,6 +33,10 @@
       font-size: 36px;
       line-height: 37px;
     }
+  }
+
+  &__title.active {
+    color: white;
   }
 
   &__form {
@@ -79,4 +90,13 @@
       background-color: $mainBlue;
     }
   }
+
+  &__btn.active {
+    background-color: $mainBlue;
+
+    &:hover {
+      background-color: #1485C5;
+    }
+  } 
 }
+
