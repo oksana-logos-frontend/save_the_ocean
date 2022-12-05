@@ -1624,6 +1624,10 @@ ul {
   z-index: 2;
 }
 
+.menu.active {
+  background-color: #101010;
+}
+
 .menu__content {
   height: 100vh;
   padding: 16px 23px;
@@ -1650,6 +1654,20 @@ ul {
 .menu__cross-icon {
   margin: auto;
   width: 20px;
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+}
+
+.menu__cross-icon.active {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.menu__cross-icon.active:hover {
+  -webkit-filter: invert(53%) sepia(72%) saturate(2181%) hue-rotate(175deg) brightness(102%) contrast(91%);
+          filter: invert(53%) sepia(72%) saturate(2181%) hue-rotate(175deg) brightness(102%) contrast(91%);
 }
 
 .menu__toggle {
@@ -1726,6 +1744,10 @@ ul {
   margin-bottom: 11px;
 }
 
+.menu__link.active {
+  color: white;
+}
+
 .menu__contacts {
   list-style: none;
   font-size: 14px;
@@ -1767,6 +1789,16 @@ ul {
 .menu__sotials-icon:hover {
   -webkit-filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
           filter: invert(57%) sepia(25%) saturate(3408%) hue-rotate(173deg) brightness(98%) contrast(96%);
+}
+
+.menu__sotials-icon.active {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+.menu__sotials-icon.active:hover {
+  -webkit-filter: invert(53%) sepia(72%) saturate(2181%) hue-rotate(175deg) brightness(102%) contrast(91%);
+          filter: invert(53%) sepia(72%) saturate(2181%) hue-rotate(175deg) brightness(102%) contrast(91%);
 }
 
 .toggle {
