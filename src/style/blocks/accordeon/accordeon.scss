@@ -1,0 +1,113 @@
+.accordion {
+  width: 100%;
+
+  &__content {
+    margin: 2px 0;
+    border-bottom: 1px solid $mainBlack;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.open {
+      padding-bottom: 12px;
+      height: 220px;
+
+      @include onLittleDesktopScreen {
+        padding-bottom: 12px;
+        max-height: 80%;
+      }
+    }
+  }
+
+  &__content.active {
+    border-bottom: 1px solid white;
+  } 
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &.open {
+      min-height: 50px;
+    }
+
+    &:hover {
+      span {
+        color: $mainBlue;
+      }
+    }
+  }
+
+  &__header.active {
+    transition: all 0.3s ease;
+    span {
+      color: white;
+    }
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    &:hover {
+      span {
+        color: $mainBlue;
+      }
+    }
+  }
+
+  &__description {
+    height: 0px;
+    font-family: $KyivType;
+    font-size: 14px;
+    color: $mainBlack;
+    line-height: 22px;
+    transition: all 0.3s linear;
+
+    @include onMiddleDesktopScreen {
+      font-size: 16px;
+    }
+  }
+
+  &__description.active {
+    color: white;
+  }
+
+  &__title {
+    @extend %SyncopateBold; 
+      font-size: 14px;
+      line-height: 15px;
+      color: $mainBlack;
+      text-transform: uppercase;
+      transition: color 0.3s ease-in-out;
+
+    @include onMiddleDesktopScreen {
+      font-size: 15px;
+    }
+  }
+
+  &__img {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__img.rotate {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+
+
+
+
+
+
+
+// .accordion-content.open header {
+//   min-height: 50px;
+// }
+
+
+
+
