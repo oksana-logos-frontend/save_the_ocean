@@ -8,6 +8,8 @@ const linkProject = document.querySelector('.menu__link-projects');
 const linkStories = document.querySelector('.menu__link-stories');
 const linkJoin = document.querySelector('.menu__link-join');
 
+/*--- Blur --- */
+
 burger.addEventListener('click', addBlur);
 crossBtn.addEventListener('click', removeBlur);
 linkAbout.addEventListener('click', removeBlur);
@@ -31,6 +33,7 @@ function removeBlur() {
   $('body').css('overflow', 'initial');
 }
 
+/*--- Sliders --- */
 
 $('.slider').slick({
   dots: false,
@@ -132,6 +135,43 @@ form.addEventListener('submit', (event) => {
   form.reset();
 });
 
+/*---Accordeon--- */
+
+const accordionContent = document.querySelectorAll('.accordion__content');
+
+accordionContent.forEach((item, index) => {
+  const header = item.querySelector('.accordion__header');
+
+  header.addEventListener('click', () => {
+    item.classList.toggle('open');
+
+    const description = item.querySelector('.accordion__description');
+
+    if (item.classList.contains('open')) {
+      description.style.height = `${description.scrollHeight}px`;
+      item.querySelector('img').classList.add('rotate');
+    } else {
+      description.style.height = '0px';
+      item.querySelector('img').classList.remove('rotate');
+    }
+
+    removeOpen(index);
+  });
+});
+
+function removeOpen(index1) {
+  accordionContent.forEach((item2, index2) => {
+    if (index1 != index2) {
+      item2.classList.remove('open');
+      const descr = item2.querySelector('.accordion__description');
+
+      descr.style.height = '0px';
+      item2.querySelector('img').classList.remove('rotate');
+    }
+  });
+}
+
+/*---Theme switch--- */
 
 const toggle = document.querySelector('.toggle');
 const toggleItem = document.querySelector('.toggle__btn');
@@ -147,12 +187,9 @@ const menuLink = document.querySelectorAll('.menu__link ');
 const crossIcon = document.querySelector('.menu__cross-icon');
 const menuIconsSocial = document.querySelectorAll('.menu__sotials-icon');
 const aboutTitle = document.querySelector('.about__title-first');
-const aboutHr = document.querySelector('.about__hr');
-const aboutContentText = document.querySelector('.about__content-text');
-const aboutTopBorder = document.querySelector('.about__content-block--second');
-const contentBlock = document.querySelector('.about__content-block');
-const contentBlock1 = document.querySelector('.about__content-block--first');
-const aboutBottomContent = document.querySelector('.about__bottom-content');
+const aboutContentText = document.querySelectorAll('.accordion__description');
+const contentBlock = document.querySelectorAll('.accordion__content');
+const accordionTitle = document.querySelectorAll('.accordion__header');
 const aboutContentTitle = document.querySelectorAll('.about__content-title');
 const pseudoElement = document.querySelectorAll('.about__content-arrow');
 const newsTitle = document.querySelector('.latest-news__title');
@@ -164,7 +201,7 @@ const subscribeTitle = document.querySelector('.subscribe__title');
 const subscribeBtn = document.querySelector('.subscribe__btn');
 const footerSocialsText = document.querySelectorAll('.footer__sotials-text');
 const footerIcon = document.querySelectorAll('.footer__icon');
-const progressBar = document.querySelector('.latest-news__slider-progress')
+const progressBar = document.querySelector('.latest-news__slider-progress');
 
 toggle.addEventListener('click', handleToggle);
 menuToggle.addEventListener('click', handleToggle);
@@ -180,14 +217,8 @@ function handleToggle() {
   menu.classList.toggle('active');
   crossIcon.classList.toggle('active');
   aboutTitle.classList.toggle('active');
-  aboutHr.classList.toggle('active'); 
-  aboutContentText.classList.toggle('active'); 
   menuToggleItem.classList.toggle('active');
-  aboutTopBorder.classList.toggle('active');
   newsTitle.classList.toggle('active');
-  contentBlock.classList.toggle('active');
-  contentBlock1.classList.toggle('active');
-  aboutBottomContent.classList.toggle('active');
   subscribeSection.classList.toggle('active');
   subscribeTitle.classList.toggle('active');
   subscribeBtn.classList.toggle('active'); 
@@ -197,6 +228,9 @@ function handleToggle() {
   menuLink.forEach(item => item.classList.toggle('active'));
   menuIconsSocial.forEach(item => item.classList.toggle('active'));
   aboutContentTitle.forEach(item => item.classList.toggle('active'));
+  contentBlock.forEach(item => item.classList.toggle('active'));
+  aboutContentText.forEach(item => item.classList.toggle('active'));
+  accordionTitle.forEach(item => item.classList.toggle('active'));
   pseudoElement.forEach(item => item.classList.toggle('active'));
   sliderCard.forEach(item => item.classList.toggle('active'));
   cardText.forEach(item => item.classList.toggle('active')); 
